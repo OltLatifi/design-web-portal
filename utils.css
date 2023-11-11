@@ -1,0 +1,19 @@
+.container {
+  width: 90%;
+  max-width: 1240px;
+  min-width: 280px;
+  margin: auto;
+}
+
+.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.padding-s {
+  padding: 0.25rem 0.5rem;
+}
+
+.rounded-s {
+  border-radius: 0.25rem;
+}
