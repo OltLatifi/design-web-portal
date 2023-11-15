@@ -4,3 +4,41 @@
   font-weight: 600;
   gap: 1rem;
 }
+
+.main-topic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.main-topic > * {
+  width: 100%;
+}
+
+.main-topic > p {
+  display: none;
+}
+
+.main-topic-data {
+  padding: 2rem;
+}
+
+.main-topic-metadata {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .main-topic > div {
+    width: 65%;
+  }
+  .main-topic > p {
+    display: block;
+    width: 33%;
+    line-height: 1.6;
+    padding: 0 2rem;
+    color: var(--color-secondary);
+  }
+}
