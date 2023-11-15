@@ -24,7 +24,7 @@
   padding: 2rem;
 }
 
-.main-topic-metadata {
+.metadata {
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
@@ -41,4 +41,31 @@
     padding: 0 2rem;
     color: var(--color-secondary);
   }
+}
+
+.list-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  row-gap: 2rem;
+}
+
+.single-article {
+  width: 48%;
+}
+
+@media (min-width: 768px) {
+  .single-article {
+    width: 24%;
+  }
+}
+
+.single-article > * {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.single-article .metadata {
+  color: var(--color-other);
 }
