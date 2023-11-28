@@ -3,7 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/utils.css" />
+    <link rel="stylesheet" href="/specific.css" />
   </head>
-  <body></body>
+  <body class="container">
+    <!-- nav -->
+    <nav>
+      <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/main/listview.html">News</a></li>
+        <li class="active padding-s rounded-s">
+          <a href="/pages/authentication/register.html">Register</a>
+        </li>
+      </ul>
+
+      <div class="nav-list">
+        <img src="../../assets/svg/search.svg" alt="Search icon" />
+        <img
+          src="../../assets/svg/hamburger-menu.svg"
+          alt="Hamburger menu icon"
+        />
+      </div>
+    </nav>
+
+    <!-- form -->
+    <main class="register-layout margin-ys">
+      <form id="register-form" class="register-form">
+        <h1>Register</h1>
+        <label>
+          Username:
+          <input type="text" />
+        </label>
+        <label>
+          Email:
+          <input type="text" />
+        </label>
+        <label>
+          Password:
+          <input type="password" />
+        </label>
+        <label>
+          Confirm Password:
+          <input type="password" />
+        </label>
+        <button>Submit</button>
+      </form>
+      <div>
+        <img src="/assets/display.jpeg" alt="Side Image">
+      </div>
+    </main>
+  </body>
+  <script>
+    let form = document.getElementById("register-form")
+    function submitForm(event){
+      event.preventDefault();
+      
+    }
+    form.addEventListener("submit", submitForm)
+  </script>
 </html>
