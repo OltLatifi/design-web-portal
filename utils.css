@@ -37,3 +37,13 @@
   justify-content: flex-start;
   align-items: flex-end;
 }
+
+.error {
+  display: none;
+  color: #a13d3d;
+  font-family: var(--font-secondary);
+}
+
+.show {
+  display: block !important;
+}
