@@ -29,9 +29,10 @@
     </nav>
 
     <!-- form -->
-    <main class="register-layout margin-ys">
-      <form id="register-form" class="register-form">
+    <main class="form-layout margin-ys">
+      <form id="form" class="form">
         <h1>Register</h1>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
         <label>
           Username:
           <input id="username" type="text" />
@@ -60,7 +61,7 @@
     </main>
   </body>
   <script>
-    let form = document.getElementById("register-form")
+    let form = document.getElementById("form")
     const usernameRegex = /^[A-Z][a-z]+[A-Z][a-z]+$/
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     const passwordRegex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+,\-./:;<=>?@[\\]^_`{|}~]).{8,}$/
