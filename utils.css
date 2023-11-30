@@ -38,6 +38,13 @@
   align-items: flex-end;
 }
 
+.index-list-article {
+  height: 190px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 .error {
   display: none;
   color: #a13d3d;
