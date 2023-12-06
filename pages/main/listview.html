@@ -18,14 +18,15 @@
       href="/assets/favicon.ico"
     />
   </head>
-  </head>
   <body>
     <div class="container">
       <!-- navigation -->
       <nav>
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
-          <li class="active padding-s rounded-s"><a href="/pages/main/listview.html">News</a></li>
+          <li class="active padding-s rounded-s">
+            <a href="/pages/main/listview.html">News</a>
+          </li>
           <li><a href="/pages/authentication/register.html">Register</a></li>
         </ul>
         <div class="nav-list">
@@ -33,7 +34,7 @@
           <img src="/assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
         </div>
       </nav>
-      
+
       <!-- slider -->
       <div id="slider" class="margin-ys">
         <button onclick="goPrevious()"><</button>
@@ -43,136 +44,7 @@
       <!-- list section -->
       <section class="margin-ys">
         <h1>Latest News</h1>
-        <div class="list-section">
-          <div class="single-article">
-            <img src="/assets/articles/article2.png" alt="Article Image 1">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article3.png" alt="Article Image 2">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article4.png" alt="Article Image 3">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article5.png" alt="Article Image 4">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article6.png" alt="Article Image 5">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article7.png" alt="Article Image 6">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article9.png" alt="Article Image 7">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article2.png" alt="Article Image 8">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article2.png" alt="Article Image 1">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article3.png" alt="Article Image 2">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article4.png" alt="Article Image 3">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article5.png" alt="Article Image 4">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article6.png" alt="Article Image 5">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article7.png" alt="Article Image 6">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article9.png" alt="Article Image 7">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-          <div class="single-article">
-            <img src="/assets/articles/article2.png" alt="Article Image 8">
-            <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="metadata">
-              <span>2 Hours Ago</span>
-              <span>CNN</span>
-            </div>
-          </div>
-        </div>
+        <div class="list-section" id="articles-list"></div>
       </section>
     </div>
 
@@ -181,7 +53,15 @@
       <div class="container footer-content">
         <div>
           <h4>About</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac justo et mauris fermentum dapibus. Integer euismod vehicula ligula, eu ultrices lectus lacinia nec. Proin vestibulum justo nec metus tincidunt, ac posuere justo bibendum. Sed euismod finibus nisi, vel cursus ex euismod eget. Aenean sodales urna eu neque tincidunt, vel ultrices felis laoreet. Vivamus auctor nisl vel ante facilisis, non cursus eros rhoncus. Phasellus aliquet sapien in velit tincidunt</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+            justo et mauris fermentum dapibus. Integer euismod vehicula ligula,
+            eu ultrices lectus lacinia nec. Proin vestibulum justo nec metus
+            tincidunt, ac posuere justo bibendum. Sed euismod finibus nisi, vel
+            cursus ex euismod eget. Aenean sodales urna eu neque tincidunt, vel
+            ultrices felis laoreet. Vivamus auctor nisl vel ante facilisis, non
+            cursus eros rhoncus. Phasellus aliquet sapien in velit tincidunt
+          </p>
         </div>
 
         <div>
@@ -199,32 +79,58 @@
         <div>
           <div>
             <ul class="social-icons">
-              <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-              <li><a href="https://github.com/OltLatifi/design-web-portal"><i class="fa fa-github fa-lg"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>   
+              <li>
+                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/OltLatifi/design-web-portal"
+                  ><i class="fa fa-github fa-lg"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+              </li>
             </ul>
           </div>
-          <hr class="divider">
-          <p class="copyright-text">Copyright &copy; 2023 | All Rights Reserved
-
+          <hr class="divider" />
+          <p class="copyright-text">
+            Copyright &copy; 2023 | All Rights Reserved
+          </p>
         </div>
       </div>
     </footer>
 
-  <script src="slider.js" async defer />
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script>
-    // let options = {
-    //   type: 'loop',
-    //   autoplay: true,
-    //   interval: 2000,
-    //   pauseOnHover: true,
-    //   lazyLoad: true,
-    //   gap: 20,
-    // }
-    // new Splide( '.splide', options).mount();
-  </script>
+    <<<<<<< HEAD
+    <script src="slider.js" async defer />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      // let options = {
+      //   type: 'loop',
+      //   autoplay: true,
+      //   interval: 2000,
+      //   pauseOnHover: true,
+      //   lazyLoad: true,
+      //   gap: 20,
+      // }
+      // new Splide( '.splide', options).mount();
+    </script>
+    =======
+    <script src="listview.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      let options = {
+        type: "loop",
+        autoplay: true,
+        interval: 2000,
+        pauseOnHover: true,
+        lazyLoad: true,
+        gap: 20,
+      };
+      new Splide(".splide", options).mount();
+    </script>
+    >>>>>>> main
   </body>
-
 </html>
