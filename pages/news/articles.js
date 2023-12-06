@@ -1,19 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const articleId = getArticleId();
-
   var articles;
-
-  fetch("../../articles.json")
+  fetch("articles.json")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      articles = data;
-      displayArticle(articles, articleId);
+      articles = data.slice(0, 8);
+      displayArticles(articles);
     })
     .catch((error) => {
       console.error("Error fetching article:", error);
-      displayArticle(articles, articleId);
+      displayArticles(articles);
     });
 });
 

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.json();
     })
     .then((data) => {
-      articles = data.slice(0,8);
+      articles = data.slice(0, 8);
       displayArticles(articles);
     })
     .catch((error) => {
@@ -26,6 +26,8 @@ function displayArticles(articles) {
       : truncatedContent;
 
   var hotArticle = document.getElementById("hot-topics");
+  var hotArticleLink = document.getElementById("main-topic");
+  hotArticleLink.href = `pages/news/article.html?id=${articles[0]}`;
   hotArticle.style = `
         background: url(assets/articles/article${articles[0].id}.png),
         linear-gradient(180deg, transparent, black);
@@ -34,7 +36,7 @@ function displayArticles(articles) {
   var articlesContainer = document.getElementById("articles-list");
   articles.forEach((element) => {
     var article = document.createElement("a");
-    article.href = `pages/news/article.html?id=${element.id}`
+    article.href = `pages/news/article.html?id=${element.id}`;
     article.classList.add("single-article");
     article.innerHTML = `
         <img class="index-list-article" src="assets/articles/article${element.id}.png" alt="Article Image ${element.id}">

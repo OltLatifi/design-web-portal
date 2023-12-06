@@ -1,72 +1,86 @@
 [
-    {
-        "id": 1,
-        "title": "Article 1",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac justo et mauris fermentum dapibus. Integer euismod vehicula ligula, eu ultrices lectus lacinia nec. Proin vestibulum justo nec metus tincidunt, ac posuere justo bibendum. Sed euismod finibus nisi, vel cursus ex euismod eget. Aenean sodales urna eu neque tincidunt, vel ultrices felis laoreet. Vivamus auctor nisl vel ante facilisis, non cursus eros rhoncus. Phasellus aliquet sapien in velit tincidunt, ",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 2,
-        "title": "Article 2",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 3,
-        "title": "Article 3",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 4,
-        "title": "Article 4",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 5,
-        "title": "Article 5",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 6,
-        "title": "Article 6",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 7,
-        "title": "Article 7",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 8,
-        "title": "Article 8",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 9,
-        "title": "Article 9",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    },
-    {
-        "id": 10,
-        "title": "Article 10",
-        "author": "John Doe",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-        "date": "2023-11-19"
-    }
+  {
+    "id": 1,
+    "title": "Article 1",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac justo et mauris fermentum dapibus. Integer euismod vehicula ligula, eu ultrices lectus lacinia nec. Proin vestibulum justo nec metus tincidunt, ac posuere justo bibendum. Sed euismod finibus nisi, vel cursus ex euismod eget. Aenean sodales urna eu neque tincidunt, vel ultrices felis laoreet. Vivamus auctor nisl vel ante facilisis, non cursus eros rhoncus. Phasellus aliquet sapien in velit tincidunt, ",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 2,
+    "title": "Article 2",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 3,
+    "title": "Article 3",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 4,
+    "title": "Article 4",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 5,
+    "title": "Article 5",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 6,
+    "title": "Article 6",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 7,
+    "title": "Article 7",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 8,
+    "title": "Article 8",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 9,
+    "title": "Article 9",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 10,
+    "title": "Article 10",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 11,
+    "title": "Article 11",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  },
+  {
+    "id": 12,
+    "title": "Article 12",
+    "author": "John Doe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "date": "2023-11-19"
+  }
 ]
