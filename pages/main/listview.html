@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/utils.css" />
     <link rel="stylesheet" href="/specific.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon.ico"
+    />
   </head>
   </head>
   <body>
@@ -29,42 +35,11 @@
       </nav>
       
       <!-- slider -->
-      <div class="splide margin-ys" role="group" aria-label="Hottest news">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="slider-article">
-                <img src="/assets/articles/article1.png" alt="Article image">
-                <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-                <div class="metadata">
-                  <span>2 Hours Ago</span>
-                  <span>CNN</span>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="slider-article">
-                <img src="/assets/articles/article1.png" alt="Article image">
-                <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-                <div class="metadata">
-                  <span>2 Hours Ago</span>
-                  <span>CNN</span>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="slider-article">
-                <img src="/assets/articles/article1.png" alt="Article image">
-                <h3>News Title Lorem Ipsum Dolor Sit Amet</h3>
-                <div class="metadata">
-                  <span>2 Hours Ago</span>
-                  <span>CNN</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div id="slider" class="margin-ys">
+        <button onclick="goPrevious()"><</button>
+        <button onclick="goNext()">></button>
       </div>
+
       <!-- list section -->
       <section class="margin-ys">
         <h1>Latest News</h1>
@@ -237,17 +212,18 @@
       </div>
     </footer>
 
+  <script src="slider.js" async defer />
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
-    let options = {
-      type: 'loop',
-      autoplay: true,
-      interval: 2000,
-      pauseOnHover: true,
-      lazyLoad: true,
-      gap: 20,
-    }
-    new Splide( '.splide', options).mount();
+    // let options = {
+    //   type: 'loop',
+    //   autoplay: true,
+    //   interval: 2000,
+    //   pauseOnHover: true,
+    //   lazyLoad: true,
+    //   gap: 20,
+    // }
+    // new Splide( '.splide', options).mount();
   </script>
   </body>
 
