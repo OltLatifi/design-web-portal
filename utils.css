@@ -65,6 +65,10 @@
   font-family: var(--font-secondary);
 }
 
+.hide {
+  display: none;
+}
+
 .show {
   display: block !important;
 }

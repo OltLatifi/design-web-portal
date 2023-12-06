@@ -66,11 +66,13 @@
   margin-top: 0.5rem;
 }
 
-.single-article .metadata, .slider-article .metadata {
+.single-article .metadata,
+.slider-article .metadata {
   color: var(--color-other);
 }
 
-.slider-article , .slider-article > *{
+.slider-article,
+.slider-article > * {
   width: 100%;
 }
 
@@ -81,9 +83,13 @@
 
 .slider-article img {
   filter: brightness(0.7);
+  width: 100%;
+  aspect-ratio: 16/7;
+  object-fit: cover;
 }
 
-.slider-article h3, .slider-article .metadata {
+.slider-article h3,
+.slider-article .metadata {
   position: absolute;
   left: 5%;
 }
@@ -109,7 +115,7 @@
     font-weight: 700;
     font-size: 34px;
   }
-  
+
   .slider-article .metadata {
     bottom: 15%;
     color: white;
@@ -123,6 +129,7 @@
   flex-direction: row-reverse;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 5%;
+  min-height: 600px;
 }
 
 .form-layout > * {
@@ -133,15 +140,15 @@
   display: none;
 }
 
-@media(min-width: 768px){
+@media (min-width: 768px) {
   .form-layout {
     padding: 0;
   }
-  
+
   .form-layout > * {
     width: 50%;
   }
-  
+
   .form-layout div {
     display: block;
     overflow: hidden;
@@ -152,7 +159,7 @@
   height: 100%;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,7 +174,8 @@
   gap: 0.5rem;
 }
 
-.form input, .form button {
+.form input,
+.form button {
   padding: 0.5rem 1rem;
 }
 
@@ -213,7 +221,7 @@
   .footer-content > *:nth-child(1) {
     width: 65%;
   }
-  
+
   .footer-content > *:nth-child(2) {
     width: 25%;
   }
@@ -234,4 +242,37 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+#slider {
+  position: relative;
+}
+
+#slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-weight: 900;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: none;
+  background: white;
+  opacity: 0.7;
+}
+
+#slider button:hover {
+  opacity: 1;
+}
+
+#slider button:nth-child(1) {
+  left: 5px;
+}
+
+#slider button:nth-child(2) {
+  right: 5px;
 }
