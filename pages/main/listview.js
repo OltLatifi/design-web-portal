@@ -19,7 +19,7 @@ function displayArticles(articles) {
   var articlesContainer = document.getElementById("articles-list");
   articles.forEach((element) => {
     var article = document.createElement("a");
-    article.href = `pages/news/article.html?id=${element.id}`;
+    article.href = `../../pages/news/article.html?id=${element.id}`;
     article.classList.add("single-article");
     article.innerHTML = `
       <img class="index-list-article" src="../../assets/articles/article${element.id}.png" alt="Article Image ${element.id}">
