@@ -54,3 +54,7 @@
 .show {
   display: block !important;
 }
+
+.divider {
+  margin-top: 2rem;
+}

@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   var articles;
-  console.log("fetching articles...");
   fetch("articles.json")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      articles = data;
+      articles = data.slice(0,8);
       displayArticles(articles);
     })
     .catch((error) => {
@@ -34,17 +33,16 @@ function displayArticles(articles) {
 
   var articlesContainer = document.getElementById("articles-list");
   articles.forEach((element) => {
-    var article = document.createElement("div");
+    var article = document.createElement("a");
+    article.href = `pages/news/article.html?id=${element.id}`
     article.classList.add("single-article");
     article.innerHTML = `
-          <a href="pages/news/article.html?id=${article.id}">
-            <img class="article index-list-article" src="assets/articles/article${element.id}.png" alt="Article Image ${element.id}" />
-          </a>
-          <h3>${element.title}</h3>
-          <div class="metadata">
-            <span>2 Hours Ago</span>
-            <span>CNN</span>
-          </div>
+        <img class="index-list-article" src="assets/articles/article${element.id}.png" alt="Article Image ${element.id}">
+        <h3>${element.title}</h3>
+        <div class="metadata">
+        <span>2 Hours Ago</span>
+        <span>CNN</span>
+        </div>
         `;
     articlesContainer.appendChild(article);
   });
