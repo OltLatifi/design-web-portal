@@ -5,6 +5,13 @@
   margin: auto;
 }
 
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .active {
   background-color: var(--color-primary);
   color: white;
@@ -40,6 +47,13 @@
 
 .index-list-article {
   height: 190px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.details-article-image {
+  height: 400px;
   aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 6px;
