@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>About us</title>
     <link
       rel="icon"
       type="image/png"
@@ -18,19 +18,9 @@
   <body>
     <div class="container">
       <!-- navigation -->
-      <nav>
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li class="active padding-s rounded-s">
-            <a href="/pages/main/listview.html">News</a>
-          </li>
-          <li><a href="/pages/authentication/register.html">Register</a></li>
-        </ul>
-        <div class="nav-list">
-          <img src="/assets/svg/search.svg" alt="Search icon" />
-          <img src="/assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
-        </div>
-      </nav>
+      <?php
+        include "/components/navbar.php";
+      ?>
 
       <div>
         <h3>Lorem ipsum</h3>

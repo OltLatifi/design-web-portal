@@ -17,20 +17,9 @@
   <body>
     <!-- navigation -->
     <div class="container">
-      <nav>
-        <ul class="nav-list">
-          <li class="active padding-s rounded-s"><a href="/">Home</a></li>
-          <li><a href="/pages/main/listview.html">News</a></li>
-          <li><a href="/pages/authentication/register.html">Register</a></li>
-        </ul>
-        <div class="nav-list">
-          <img src="../../assets/svg/search.svg" alt="Search icon" />
-          <img
-            src="../../assets/svg/hamburger-menu.svg"
-            alt="Hamburger menu icon"
-          />
-        </div>
-      </nav>
+      <?php
+        include "/components/navbar.php";
+      ?>
       <main id="article-container" class="container">
         <div class="center-children">
           <h2 id="article-title"></h2>

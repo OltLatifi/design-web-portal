@@ -8,32 +8,22 @@
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/utils.css" />
-    <link rel="stylesheet" href="/specific.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../utils.css" />
+    <link rel="stylesheet" href="../../specific.css" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicon.ico"
+      href="../../assets/favicon.ico"
     />
   </head>
   <body>
     <div class="container">
       <!-- navigation -->
-      <nav>
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li class="active padding-s rounded-s">
-            <a href="/pages/main/listview.html">News</a>
-          </li>
-          <li><a href="/pages/authentication/register.html">Register</a></li>
-        </ul>
-        <div class="nav-list">
-          <img src="/assets/svg/search.svg" alt="Search icon" />
-          <img src="/assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
-        </div>
-      </nav>
+      <?php
+        include "/components/navbar.php";
+      ?>
 
       <!-- slider -->
       <div id="slider" class="margin-ys">
@@ -103,34 +93,6 @@
       </div>
     </footer>
 
-    <<<<<<< HEAD
     <script src="slider.js" async defer />
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script>
-      // let options = {
-      //   type: 'loop',
-      //   autoplay: true,
-      //   interval: 2000,
-      //   pauseOnHover: true,
-      //   lazyLoad: true,
-      //   gap: 20,
-      // }
-      // new Splide( '.splide', options).mount();
-    </script>
-    =======
-    <script src="listview.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script>
-      let options = {
-        type: "loop",
-        autoplay: true,
-        interval: 2000,
-        pauseOnHover: true,
-        lazyLoad: true,
-        gap: 20,
-      };
-      new Splide(".splide", options).mount();
-    </script>
-    >>>>>>> main
   </body>
 </html>

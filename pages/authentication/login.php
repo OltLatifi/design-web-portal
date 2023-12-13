@@ -17,19 +17,9 @@
   <body>
     <div class="container">
       <!-- nav -->
-      <nav>
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/pages/main/listview.html">News</a></li>
-          <li class="active padding-s rounded-s">
-            <a href="/pages/authentication/login.html">Login</a>
-          </li>
-        </ul>
-        <div class="nav-list">
-          <img src="/assets/svg/search.svg" alt="Search icon" />
-          <img src="/assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
-        </div>
-      </nav>
+      <?php
+        include "/components/navbar.php";
+      ?>
       <!-- form -->
       <main class="form-layout margin-ys">
         <form id="form" class="form">

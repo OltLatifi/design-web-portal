@@ -17,17 +17,9 @@
   <body>
     <!-- navigation -->
     <div class="container">
-      <nav>
-        <ul class="nav-list">
-          <li class="active padding-s rounded-s"><a href="/">Home</a></li>
-          <li><a href="/pages/main/listview.html">News</a></li>
-          <li><a href="/pages/authentication/register.html">Register</a></li>
-        </ul>
-        <div class="nav-list">
-          <img src="assets/svg/search.svg" alt="Search icon" />
-          <img src="assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
-        </div>
-      </nav>
+      <?php
+        include "components/navbar.php";
+      ?>
       <!-- main content -->
       <main class="margin-ys">
         <h1>Hot Topics</h1>
