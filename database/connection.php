@@ -15,7 +15,12 @@ class Database {
         }
     }
 
+    public function getConn() {
+        return $this->conn;
+    }
+
     public function query($sql) {
+        $prepared_sql = $this->conn->prepare($sql);
         return $this->conn->query($sql);
     }
 
@@ -24,6 +29,6 @@ class Database {
     }
 }
 
-$db = new Database("test");
+$db = new Database("portal");
 
 ?>
