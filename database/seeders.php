@@ -7,6 +7,7 @@ $users = [
         "first_name" => "Olt",
         "last_name" => "Latifi",
         "email" => "oltlatifi2003@gmail.com",
+        "username" => "OltLatifi",
         "role" => "ADMIN",
         "password" => "1234"
     ],
@@ -14,6 +15,7 @@ $users = [
         "first_name" => "Jon",
         "last_name" => "Fazliu",
         "email" => "jonfazliu@gmail.com",
+        "username" => "joni",
         "role" => "ADMIN",
         "password" => "1234"
     ],
@@ -21,6 +23,7 @@ $users = [
         "first_name" => "Staff",
         "last_name" => "Member",
         "email" => "staff@gmail.com",
+        "username" => "staff",
         "role" => "STAFF",
         "password" => "1234"
     ],
@@ -28,23 +31,25 @@ $users = [
         "first_name" => "User",
         "last_name" => ";)",
         "email" => "user@gmail.com",
+        "username" => "User1",
         "role" => "USER",
         "password" => "1234"
     ],
 ];
 
-$user_sql = "INSERT INTO user (first_name, last_name, email, role, password) VALUES (?, ?, ?, ?, ?)";
+$user_sql = "INSERT INTO user (first_name, last_name, email, username, role, password) VALUES (?, ?, ?, ?, ?, ?)";
 foreach ($users as $user) {
     $params = [
         $user["first_name"],
         $user["last_name"],
         $user["email"],
+        $user["username"],
         $user["role"],
-        $user["password"]
+        password_hash($user["password"], PASSWORD_DEFAULT),
     ];
 
     $stmt = $db->getConn()->prepare($user_sql);
-    $stmt->bind_param("sssss", ...$params);
+    $stmt->bind_param("ssssss", ...$params);
     $stmt->execute();
     $stmt->close();
 }
