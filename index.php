@@ -18,7 +18,9 @@
     <!-- navigation -->
     <div class="container">
       <?php
+        include "constants.php";
         include "components/navbar.php";
+        include "database/connection.php";
       ?>
       <!-- main content -->
       <main class="margin-ys">
