@@ -5,7 +5,7 @@
         <li><a href="pages/authentication/register.php">Register</a></li>
     </ul>
     <div class="nav-list">
-        <img src="assets/svg/search.svg" alt="Search icon" />
-        <img src="assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
+        <img src="<?php echo $PROJECT_URL; ?>/assets/svg/search.svg" alt="Search icon" />
+        <img src="<?php echo $PROJECT_URL; ?>/assets/svg/hamburger-menu.svg" alt="Hamburger menu icon" />
     </div>
 </nav>

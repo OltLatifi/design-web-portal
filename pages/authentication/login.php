@@ -1,43 +1,112 @@
+<?php
+  include "../../database/connection.php";
+  include "../../constants.php";
+
+  class Login {
+    private $db;
+
+    public function __construct($db, $projectUrl) {
+      $this->db = $db;
+      $this->projectUrl = $projectUrl;
+    }
+
+    public function authenticateUser($username, $password){
+      $sql = "SELECT id, username, password, role FROM user WHERE username = ? OR email = ?";
+      $stmt = $this->db->getConn()->prepare($sql);
+      $stmt->bind_param("ss", $username, $username);
+      $stmt->execute();
+      $stmt->bind_result($userId, $dbUsername, $dbPassword, $dbRole);
+
+      if ($stmt->fetch()) {
+        if (password_verify($password, $dbPassword)) {
+          $this->startSession($userId, $dbUsername, $dbRole);
+          $this->redirectUser($dbRole);
+        } else {
+          $passwordError =  "Incorrect password";
+        }
+      } else {
+        $usernameError =  "User not found";
+      }
+
+      $stmt->close();
+      return ["usernameError" => $usernameError, "passwordError" => $passwordError];
+    }
+
+    private function startSession($userId, $username, $role) {
+      session_start();
+      $_SESSION['user_id'] = $userId;
+      $_SESSION['username'] = $username;
+      $_SESSION['role'] = $role;
+    }
+
+    private function redirectUser($role) {
+      if (strtoupper($role) == 'ADMIN') {
+        header("Location: " . $this->projectUrl . "pages/admin/dashboard.php");
+        die();
+      } elseif (strtoupper($role) == 'STAFF') {
+        header("Location: " . $this->projectUrl . "pages/staff/dashboard.php");
+        die();
+      } else {
+        header("Location: " . $this->projectUrl . "index.php");
+        die();
+      }
+    }
+  }
+
+  session_start();
+  $login = new Login($db, $PROJECT_URL);
+
+  $usernameError = $passwordError = "";
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $errors = $login->authenticateUser($username, $password);
+    $usernameError = $errors["usernameError"];
+    $passwordError = $errors["passwordError"];
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/utils.css" />
-    <link rel="stylesheet" href="/specific.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../utils.css" />
+    <link rel="stylesheet" href="../../specific.css" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicon.ico"
+      href="../../assets/favicon.ico"
     />
   </head>
   <body>
     <div class="container">
       <!-- nav -->
       <?php
-        include "/components/navbar.php";
+        include "../../components/navbar.php";
       ?>
       <!-- form -->
       <main class="form-layout margin-ys">
-        <form id="form" class="form">
+        <form id="form" class="form" method="POST">
           <h1>Login</h1>
           <label>
             Username or Email:
-            <input id="username" type="text" />
-            <p class="error" id="username_error"></p>
+            <input id="username" type="text" name="username" value="<?php echo htmlspecialchars($username); ?>"/>
+            <p class="error" id="username_error"><?php echo $usernameError ?></p>
           </label>
           <label>
             Password:
-            <input id="password" type="password" />
-            <p class="error" id="password_error"></p>
+            <input id="password" type="password" name="password" value="<?php echo htmlspecialchars($password); ?>"/>
+            <p class="error" id="password_error"><?php echo $passwordError ?></p>
           </label>
           <button>Submit</button>
         </form>
         <div>
-          <img src="/assets/display.jpeg" alt="Side Image" />
+          <img src="../../assets/display.jpeg" alt="Side Image" />
         </div>
       </main>
     </div>
@@ -97,44 +166,15 @@
     </footer>
   </body>
   <script>
-    let form = document.getElementById("form");
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
-
     let username_error = document.getElementById("username_error");
     let password_error = document.getElementById("password_error");
 
-    function submitForm(event) {
-      event.preventDefault();
-      let error = 0;
-
-      if (
-        username.value === "OltLatifi" ||
-        username.value === "oltlatifi2003@gmail"
-      ) {
-        username_error.classList.remove("show");
-        if (error > 0) {
-          error--;
-        }
-      } else {
-        username_error.classList.add("show");
-        username_error.innerHTML = "Username is not correct";
-        error++;
-      }
-
-      if (password.value === "Danke123") {
-        password_error.classList.remove("show");
-      } else {
-        password_error.classList.add("show");
-        password_error.innerHTML = "Password is not correct";
-        error++;
-      }
-
-      if (error === 0) {
-        alert("You are now logged in");
-      }
+    if (username_error.innerHTML){
+      username_error.classList.add("show");
     }
-    form.addEventListener("submit", submitForm);
+    if (password_error.innerHTML){
+      password_error.classList.add("show");
+    }
 
     function resetState(event) {
       let id = event.target.id;
