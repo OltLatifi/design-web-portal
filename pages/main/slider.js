@@ -1,6 +1,6 @@
 let articles;
 let biggestId;
-fetch("/articles.json")
+fetch("../../articles.json")
   .then((response) => {
     return response.json();
   })

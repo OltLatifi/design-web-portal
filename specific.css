@@ -276,3 +276,17 @@
 #slider button:nth-child(2) {
   right: 5px;
 }
+
+.greeting {
+  display: none;
+}
+@media (min-width: 400px) {
+  .greeting {
+    display: block;
+  }
+}
+
+.about-us-paragraphs {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
