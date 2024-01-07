@@ -175,7 +175,8 @@
 }
 
 .form input,
-.form button {
+.form button,
+.form select {
   padding: 0.5rem 1rem;
 }
 

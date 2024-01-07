@@ -76,3 +76,24 @@
 .divider {
   margin-top: 2rem;
 }
+
+.min-height-l {
+  min-height: 800px;
+}
+
+.alert {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.alert-primary {
+  background: #d0e9dd;
+  border: 1px solid #0f5132;
+  color: #0f5132;
+}
+
+.alert-error {
+  background: #e5c8c4;
+  border: 1px solid #a13d3d;
+  color: #a13d3d;
+}
