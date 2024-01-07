@@ -9,7 +9,7 @@
     <div class="container">
       <!-- navigation -->
       <?php
-        include "/components/navbar.php";
+        include "../../components/navbar.php";
       ?>
 
       <!-- slider -->
