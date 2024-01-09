@@ -19,10 +19,45 @@ class Database {
         return $this->conn;
     }
 
-    public function query($sql) {
-        $prepared_sql = $this->conn->prepare($sql);
-        return $this->conn->query($sql);
+    public function query($sql, $params = []) {
+        $stmt = $this->conn->prepare($sql);
+    
+        if ($stmt) {
+            if (!empty($params)) {
+                $types = $params[0];
+                $values = array_slice($params, 1);
+                $stmt->bind_param($types, ...$values);
+            }
+    
+            $executeResult = $stmt->execute();
+    
+            if (!$executeResult) {
+                // Handle the execution error
+                echo "Query execution failed: " . $stmt->error;
+                return false;
+            }
+    
+            $result = $stmt->get_result();
+    
+            if ($result === false) {
+                // Handle the get_result error
+                echo "Failed to get result: " . $stmt->error;
+                return false;
+            }
+    
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+    
+            $stmt->close();
+    
+            return $data;
+        } else {
+            // Handle the prepare error
+            echo "Prepare statement failed: " . $this->conn->error;
+            return false;
+        }
     }
+    
+    
 
     public function close() {
         $this->conn->close();

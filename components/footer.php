@@ -16,7 +16,7 @@
         <div>
           <h4>Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="<?php echo $PROJECT_URL ?>pages/main/aboutus.php">About Us</a></li>
+            <li><a href="<?php echo PROJECT_URL ?>pages/main/aboutus.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">Contribute</a></li>
             <li><a href="#">Privacy Policy</a></li>

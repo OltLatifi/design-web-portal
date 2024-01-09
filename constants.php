@@ -1,4 +1,5 @@
 <?php
-    $PROJECT_URL = "http://localhost/ubt-portal/";
+
+define("PROJECT_URL", "http://localhost/ubt-portal/")
 
 ?>

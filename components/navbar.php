@@ -4,13 +4,13 @@
 ?>
 <nav>
     <ul class="nav-list">
-        <li class="active padding-s rounded-s"><a href="<?php echo $PROJECT_URL; ?>">Home</a></li>
-        <li><a href="<?php echo $PROJECT_URL; ?>pages/main/listview.php">News</a></li>
+        <li class="active padding-s rounded-s"><a href="<?php echo PROJECT_URL; ?>">Home</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>pages/main/listview.php">News</a></li>
         <?php
             if ($_SESSION["user_id"]){
-                echo '<li><a href="'. $PROJECT_URL .'pages/authentication/logout.php">Logout</a></li>';
+                echo '<li><a href="'. PROJECT_URL .'pages/authentication/logout.php">Logout</a></li>';
             } else {
-                echo '<li><a href="'. $PROJECT_URL .'pages/authentication/login.php">Login</a></li>';
+                echo '<li><a href="'. PROJECT_URL .'pages/authentication/login.php">Login</a></li>';
             }
         ?>
     </ul>
@@ -20,6 +20,6 @@
                 echo '<h4 class="greeting">Hi, '. $username .'</h4>';
             }
         ?>
-        <img src="<?php echo $PROJECT_URL; ?>/assets/svg/search.svg" alt="Search icon" />
+        <img src="<?php echo PROJECT_URL; ?>/assets/svg/search.svg" alt="Search icon" />
     </div>
 </nav>
