@@ -6,7 +6,7 @@
   session_start();
 
   if($_SESSION["user_id"]){
-    header("Location: " . $PROJECT_URL);
+    header("Location: " . PROJECT_URL);
     die();
   }
 
@@ -61,7 +61,7 @@
     }
   }
 
-  $login = new Login($db, $PROJECT_URL);
+  $login = new Login($db, PROJECT_URL);
 
   $usernameError = $passwordError = "";
 

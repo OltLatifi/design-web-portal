@@ -3,7 +3,7 @@
     session_start();
 
     if(!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "ADMIN")){
-        header("Location: " . $PROJECT_URL);
+        header("Location: " . PROJECT_URL);
         die();
     }
 ?>

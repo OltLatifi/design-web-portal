@@ -6,7 +6,7 @@
   session_start();
 
   if($_SESSION["user_id"]){
-    header("Location: " . $PROJECT_URL);
+    header("Location: " . PROJECT_URL);
     die();
   }
 ?>
@@ -53,7 +53,7 @@
           <button>Submit</button>
         </form>
         <div>
-          <img src="<?php echo $PROJECT_URL . '/assets/display.jpeg' ?>" alt="Side Image" />
+          <img src="<?php echo PROJECT_URL . '/assets/display.jpeg' ?>" alt="Side Image" />
         </div>
       </main>
     </div>

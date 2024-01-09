@@ -5,7 +5,7 @@ include "../../database/connection.php";
 session_start();
 
 if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
-  header("Location: " . $PROJECT_URL);
+  header("Location: " . PROJECT_URL);
   die();
 }
 
@@ -147,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <button>Submit</button>
     </form>
     <div>
-      <img src="<?php echo $PROJECT_URL ?>/assets/article.webp" alt="Article image">
+      <img src="<?php echo PROJECT_URL ?>/assets/article.webp" alt="Article image">
     </div>
   </main>
 </div>

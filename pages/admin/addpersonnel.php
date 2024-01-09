@@ -5,7 +5,7 @@ include "../../database/connection.php";
 session_start();
 
 if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "ADMIN")) {
-  header("Location: " . $PROJECT_URL);
+  header("Location: " . PROJECT_URL);
   die();
 }
 
@@ -212,7 +212,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <button>Submit</button>
     </form>
     <div>
-      <img style="margin-left: -175px;" src="<?php echo $PROJECT_URL ?>/assets/teamwork.png" alt="Teamwork image">
+      <img style="margin-left: -175px;" src="<?php echo PROJECT_URL ?>/assets/teamwork.png" alt="Teamwork image">
     </div>
   </main>
 </div>
