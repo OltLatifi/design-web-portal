@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
 <script>
 function unpublish(id) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'articles.php', true);
+    xhr.open('POST', 'published.php', true);
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 

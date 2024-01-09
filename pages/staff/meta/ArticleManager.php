@@ -10,8 +10,13 @@ class ArticleManager {
     }
 
     public function list($status) {
-        $sql = "SELECT * FROM article WHERE author_id = ? AND status = ?";
-        $params = ['ss', $this->user, $status];
+        $sql = "SELECT * FROM article WHERE author_id = ?";
+        $params = ['s', $this->user];
+        if ($status !== null){
+            $sql .= " AND status = ?";
+            $params = ['ss', $this->user, $status];
+        }
+
         return $this->db->query($sql, $params);
     }
 
