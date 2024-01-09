@@ -6,17 +6,17 @@ if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
     die();
 }
 
-$title = "| Drafts";
+$title = "| Articles";
 include "../../constants.php";
 include "../../database/connection.php";
 include "meta/ArticleManager.php";
 
 
 $drafts = new ArticleManager($db);
-$articles = $drafts->list(0);
+$articles = $drafts->list(1);
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
-    $article = $drafts->changeStatus($_POST["id"], 1);
+    $article = $drafts->changeStatus($_POST["id"], 0);
 }
 
 ?>
@@ -48,11 +48,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
                             $id = $article['id'];
                             $title = $article['title'];
                             $created_at = date("F jS, Y", strtotime($article['created_at']));
-                            echo "<tr><td>$id</td><td>$title</td><td>$created_at</td><td><button onclick='publish($id)'>Publish</button></td></tr>";
+                            echo "<tr><td>$id</td><td>$title</td><td>$created_at</td><td><button onclick='unpublish($id)'>Unublish</button></td></tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='100%' style='text-align: center;'>You don't have any drafts left</td></tr>";
-
+                        echo "<tr><td colspan='100%' style='text-align: center;'>You don't have any published articles left</td></tr>";
                     }
                 ?>
             </tbody>
@@ -66,9 +65,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
 ?>
 
 <script>
-function publish(id) {
+function unpublish(id) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'drafts.php', true);
+    xhr.open('POST', 'articles.php', true);
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
