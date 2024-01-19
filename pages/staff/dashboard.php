@@ -14,16 +14,37 @@ include "../../constants.php";
 include "../../database/connection.php";
 include "meta/ArticleManager.php";
 
-
-$drafts = new ArticleManager($db);
-$articles = $drafts->list(null);
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(isset($_POST["id"]) && isset($_POST["status"])){
-        $newStatus = filter_var($_POST["status"], FILTER_VALIDATE_BOOLEAN);
-        $article = $drafts->changeStatus($_POST["id"], $newStatus);
+class Article extends ArticleManager {
+    public function deleteById($id){
+        $sql = "DELETE FROM article WHERE id = ?";
+        $params = ['s', $id];
+        return $this->db->query($sql, $params);
     }
 }
+
+$article_obj = new Article($db, $_SESSION["user_id"]);
+$articles = $article_obj->list(null);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    print_r($_POST);
+    if (isset($_POST["action"])) {
+        echo $_POST["action"];
+        switch ($_POST["action"]) {
+            case "TOGGLE":
+                if (isset($_POST["id"]) && isset($_POST["status"])) {
+                    $newStatus = filter_var($_POST["status"], FILTER_VALIDATE_BOOLEAN);
+                    $article = $article_obj->changeStatus($_POST["id"], $newStatus);
+                }
+                break;
+            case "DELETE":
+                if (isset($_POST["id"])) {
+                    $article = $article_obj->deleteById($_POST["id"]);
+                }
+                break;
+        }
+    }
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -63,9 +84,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <td>".($status? "Published": "Draft")."</td>
                                     <td>$created_at</td>
                                     <td>
-                                        <button onclick='unpublish($id)'>Edit</button>
-                                        <button onclick='unpublish($id)'>Delete</button>
-                                        <button onclick='toggle($id, $status)'>Toggle Status</button>
+                                        <button onclick='window.location.href=`".PROJECT_URL. "pages/staff/editarticle.php?id=". $id ."`'>Edit</button>
+                                        <button onclick='trigger($id, null, `DELETE`)'>Delete</button>
+                                        <button onclick='trigger($id, $status, `TOGGLE`)'>Toggle Status</button>
                                     </td>
                                 </tr>";
                         }
@@ -84,7 +105,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <script>
-function toggle(id, status) {
+function trigger(id, status, action) {
+    console.log(id, status, action)
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'dashboard.php', true);
 
@@ -96,7 +118,7 @@ function toggle(id, status) {
         }
     };
 
-    let data = 'id=' + encodeURIComponent(id) + '&status=' + encodeURIComponent(!status);
+    let data = 'id=' + encodeURIComponent(id) + '&status=' + encodeURIComponent(!status) + '&action=' + encodeURIComponent(action);
 
     xhr.send(data);
 }

@@ -32,7 +32,6 @@ class Database {
             $executeResult = $stmt->execute();
     
             if (!$executeResult) {
-                // Handle the execution error
                 echo "Query execution failed: " . $stmt->error;
                 return false;
             }
@@ -40,7 +39,6 @@ class Database {
             $result = $stmt->get_result();
     
             if ($result === false) {
-                // Handle the get_result error
                 echo "Failed to get result: " . $stmt->error;
                 return false;
             }
@@ -51,7 +49,6 @@ class Database {
     
             return $data;
         } else {
-            // Handle the prepare error
             echo "Prepare statement failed: " . $this->conn->error;
             return false;
         }
