@@ -45,10 +45,11 @@
 
 .list-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 1.5rem;
   row-gap: 2rem;
+  column-gap: 1%;
 }
 
 .single-article {

@@ -48,7 +48,7 @@ class Article {
       $imageerror = $_FILES['image']['error'];
       $imagetemp = $_FILES['image']['tmp_name'];
 
-      $imagePath = $_SERVER['DOCUMENT_ROOT'] . "/images/" . $imagename;
+      $this->imagePath = "/images/" . $imagename;
   
       $data = [
           "error" => false,
@@ -56,7 +56,7 @@ class Article {
       ];
   
       if(is_uploaded_file($imagetemp)) {
-        if(move_uploaded_file($imagetemp, $imagePath)) {
+        if(move_uploaded_file($imagetemp, $_SERVER['DOCUMENT_ROOT'] . $this->imagePath)) {
           $data["message"] = "Sussecfully uploaded your image.";
         } else {
           $data["message"] = "Failed to move your image.";
