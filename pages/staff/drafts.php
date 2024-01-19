@@ -9,7 +9,7 @@ if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
 $title = "| Drafts";
 include "../../constants.php";
 include "../../database/connection.php";
-include "meta/ArticleManager.php";
+include "../../meta/ArticleManager.php";
 
 
 $drafts = new ArticleManager($db);

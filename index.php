@@ -5,32 +5,12 @@
   include "constants.php";
   include "components/head.php";
   include "database/connection.php";
+  include "meta/ArticleListManager.php";
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
   $host = $_SERVER['HTTP_HOST'];
   $baseURL = "{$protocol}://{$host}";
-
-
-  class ArticleListManager {
-    private $db;
-    private $sql = "
-      SELECT article.*, user.first_name, user.last_name
-      FROM article
-      INNER JOIN user ON article.author_id = user.id
-      WHERE article.status = 1
-      ORDER BY article.created_at DESC
-    ";
-
-    public function __construct(Database $db) {
-      $this->db = $db;
-    }
-
-    public function getPublishedArticles() {
-      $sql = $this->sql ;
-      return $this->db->query($sql);
-    }
-  }
   
-  $articleManager = new ArticleManager($db);
+  $articleManager = new ArticleListManager($db);
 
   $publishedArticles = $articleManager->getPublishedArticles();
 
