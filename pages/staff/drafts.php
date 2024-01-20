@@ -9,11 +9,11 @@ if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
 $title = "| Drafts";
 include "../../constants.php";
 include "../../database/connection.php";
-include "meta/ArticleManager.php";
+include "../../meta/ArticleManager.php";
 
 
 $drafts = new ArticleManager($db);
-$articles = $drafts->list(0);
+$articles = $drafts::list(0);
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
     $article = $drafts->changeStatus($_POST["id"], 1);

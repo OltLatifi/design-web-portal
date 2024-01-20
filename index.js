@@ -28,10 +28,10 @@ function displayArticles(articles) {
   var hotArticle = document.getElementById("hot-topics");
   var hotArticleLink = document.getElementById("main-topic");
   hotArticleLink.href = `pages/news/article.html?id=${articles[0]}`;
-  hotArticle.style = `
-        background: url(assets/articles/article${articles[0].id}.png),
-        linear-gradient(180deg, transparent, black);
-    `;
+  // hotArticle.style = `
+  //       background: url(assets/articles/article${articles[0].id}.png),
+  //       linear-gradient(180deg, transparent, black);
+  //   `;
 
   var articlesContainer = document.getElementById("articles-list");
   articles.forEach((element) => {
