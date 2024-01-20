@@ -78,6 +78,7 @@
 }
 
 .slider-article {
+  display: block;
   position: relative;
   height: 100%;
 }
@@ -291,4 +292,43 @@
 .about-us-paragraphs {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
+}
+
+.article-image {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.article-content {
+  width: 100%;
+  max-width: 900px;
+}
+
+.article-title {
+  font-size: 1.5rem;
+}
+
+.article-author {
+  margin: 1rem 0;
+  color: gray; 
+}
+
+@media (min-width: 600px) {
+  .article-image {
+    width: 70%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  .article-title {
+    font-size: 2rem;
+  }
+
+  .article-content {
+    width: 70%;
+    max-width: 900px;
+  }
 }

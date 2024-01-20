@@ -6,13 +6,14 @@
   include "components/head.php";
   include "database/connection.php";
   include "meta/ArticleListManager.php";
+
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
   $host = $_SERVER['HTTP_HOST'];
   $baseURL = "{$protocol}://{$host}";
   
   $articleManager = new ArticleListManager($db);
 
-  $publishedArticles = $articleManager->getPublishedArticles();
+  $publishedArticles = $articleManager->getPublishedArticles(9);
 
   ?>
   <body>
@@ -26,11 +27,11 @@
       <!-- main content -->
       <main class="margin-ys">
         <h1>Hot Topics</h1>
-        <a id="main-topic" class="main-topic">
+        <a id="main-topic" class="main-topic" href="<?php echo PROJECT_URL . "pages/main/article.php?id=" . $mainArticle['id']  ?>">
           <div id="hot-topics" class="div-image image-content" style=
         "<?php
 
-          echo "background: url($baseURL" . "{$mainArticle['image']}), linear-gradient(180deg, transparent, black);"
+          echo "background: url('$baseURL" . "{$mainArticle['image']}');"
         ?>background-size: cover !important;">
             <div class="main-topic-data">
               <h2 id="hot-article-title"><?php echo $mainArticle["title"] ?></h2>
@@ -54,7 +55,7 @@
                 if ($index++ == 0) continue;
                 $published_at = date("F jS, Y", strtotime($article['published_at']));
                 echo "
-                <a class='single-article'>
+                <a class='single-article' href='". PROJECT_URL . "pages/main/article.php?id=" . $article['id'] ."'>
                   <img class='index-list-article' src='".$baseURL .$article['image']."' alt='Article Image". $article['id']."'>
                   <h3>".$article['title']."</h3>
                   <div class='metadata'>

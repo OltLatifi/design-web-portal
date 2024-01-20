@@ -28,14 +28,14 @@
           $slides = 2;
           for ($i = 0; $i <= $slides; $i++) {
             $published_at = date("F jS, Y", strtotime($publishedArticles[$i]['published_at']));
-            echo "<div class='slider-article ". ($i == 0? '': 'hide') ."' id='slide_{$i}'>
+            echo "<a href='". PROJECT_URL . "pages/main/article.php?id=" . $publishedArticles[$i]['id'] ."' class='slider-article ". ($i == 0? '': 'hide') ."' id='slide_{$i}'>
               <img src='" . $baseURL . $publishedArticles[$i]["image"] . "' alt='Article image " . $publishedArticles[$i]['id'] . "'>
               <h3>" . $publishedArticles[$i]["title"] . "</h3>
               <div class='metadata'>
                   <span>{$published_at}</span>
                   <span>" . $publishedArticles[$i]['first_name'] . " " . $publishedArticles[$i]['last_name'] . "</span>
               </div>
-            </div>";
+            </a>";
           }
         ?>
         <button type="button" style="left: 1rem;" onclick="goPrevious()"><</button>
