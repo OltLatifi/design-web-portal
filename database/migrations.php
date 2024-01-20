@@ -17,7 +17,7 @@ $create_article_table = "
 CREATE TABLE article (
     id INT AUTO_INCREMENT PRIMARY KEY,
     author_id INT,
-    FOREIGN KEY (author_id) REFERENCES user(id),
+    FOREIGN KEY (author_id) REFERENCES user(id) ON DELETE CASCADE,
     title VARCHAR(255) NOT NULL,
     image VARCHAR(255),
     content TEXT,

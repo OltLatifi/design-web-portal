@@ -1,7 +1,4 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 
 session_start();
 if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
@@ -26,9 +23,7 @@ $article_obj = new Article($db, $_SESSION["user_id"]);
 $articles = $article_obj->list(null);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    print_r($_POST);
     if (isset($_POST["action"])) {
-        echo $_POST["action"];
         switch ($_POST["action"]) {
             case "TOGGLE":
                 if (isset($_POST["id"]) && isset($_POST["status"])) {
