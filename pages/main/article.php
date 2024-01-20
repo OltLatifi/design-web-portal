@@ -34,7 +34,7 @@
       <!-- article section -->
       <main class="margin-ys">
         <h2 class="article-title"><?php echo $article["title"] ?></h2>
-        <p class="article-author">Author: <?php echo $article["first_name"] ?> <?php echo $article["last_name"] ?> • <?php echo date("F jS, Y", strtotime($publishedArticles[$i]['published_at'])) ?></p>
+        <p class="article-author">Author: <?php echo $article["first_name"] ?> <?php echo $article["last_name"] ?> • <?php echo date("F jS, Y", strtotime($article['published_at'])) ?></p>
         <img class="article-image" src="<?php echo $baseURL . $article["image"] ?>"/>
         <pre class="article-content margin-ys"><?php echo $article["content"] ?></pre>
       </main>

@@ -5,7 +5,7 @@
 <nav>
     <ul class="nav-list">
         <li class="active padding-s rounded-s"><a href="<?php echo PROJECT_URL; ?>pages/admin/dashboard.php">Dashboard</a></li>
-        <li><a href="<?php echo PROJECT_URL; ?>pages/staff/addpersonnel.php">Add personnel</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>pages/admin/addpersonnel.php">Add personnel</a></li>
         <li><a href="<?php echo PROJECT_URL; ?>pages/authentication/logout.php">Logout</a></li>
     </ul>
     <div class="nav-list">

@@ -127,6 +127,7 @@ class Personnel {
 }
 
 $firstNameError = $lastNameError = $newUsernameError = $emailError = $roleError = $passwordError = "";
+$alertMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -250,9 +251,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (password_error.innerHTML) {
       password_error.classList.add("show");
     }
-    if (alert.innerHTML) {
+    if (alert.innerHTML.trim() == "") {
+      alert.classList.remove("show");
+    } else {
       alert.classList.add("show");
     }
+
+
+
 
     function resetState(event) {
       let id = event.target.id;

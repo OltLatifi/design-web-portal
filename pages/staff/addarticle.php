@@ -173,7 +173,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (content_error.innerHTML) {
       content_error.classList.add("show");
     }
-    if (alert.innerHTML) {
+    if (alert.innerHTML.trim() == "") {
+      alert.classList.remove("show");
+    } else {
       alert.classList.add("show");
     }
 
