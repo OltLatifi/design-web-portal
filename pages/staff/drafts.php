@@ -11,9 +11,8 @@ include "../../constants.php";
 include "../../database/connection.php";
 include "../../meta/ArticleManager.php";
 
-
 $drafts = new ArticleManager($db);
-$articles = $drafts::list(0);
+$articles = $drafts->list(0);
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
     $article = $drafts->changeStatus($_POST["id"], 1);
@@ -30,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
     <div class="container" style="min-height: 70dvh;">
         <!-- nav -->
         <?php
-            include "../../components/navbar.php";
+            include "../../components/staffnavbar.php";
         ?>
         <table class="margin-ys">
             <thead>

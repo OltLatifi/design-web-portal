@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container" style="min-height: 70dvh;">
         <!-- nav -->
         <?php
-            include "../../components/navbar.php";
+            include "../../components/staffnavbar.php";
         ?>
         <table class="margin-ys">
             <thead>

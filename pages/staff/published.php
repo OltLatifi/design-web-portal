@@ -9,8 +9,7 @@ if (!$_SESSION["role"] || !(strtoupper($_SESSION["role"]) == "STAFF")) {
 $title = "| Articles";
 include "../../constants.php";
 include "../../database/connection.php";
-include "meta/ArticleManager.php";
-
+include "../../meta/ArticleManager.php";
 
 $drafts = new ArticleManager($db);
 $articles = $drafts->list(1);
@@ -30,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"])){
     <div class="container" style="min-height: 70dvh;">
         <!-- nav -->
         <?php
-            include "../../components/navbar.php";
+            include "../../components/staffnavbar.php";
         ?>
         <table class="margin-ys">
             <thead>
