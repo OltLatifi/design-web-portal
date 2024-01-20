@@ -167,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
   <!-- nav -->
   <?php
-    include "../../components/navbar.php";
+    include "../../components/adminnavbar.php";
   ?>
   <!-- form -->
   <div style="display: none;" class="alert <?php echo $success["success"]?'alert-primary': 'alert-error'?> margin-ys">

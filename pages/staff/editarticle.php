@@ -100,7 +100,7 @@ include "../../components/head.php";
 <body>
 <div class="container">
     <!-- nav -->
-    <?php include "../../components/navbar.php"; ?>
+    <?php include "../../components/staffnavbar.php"; ?>
     <!-- form -->
     <div style="display: none;" class="alert <?php echo $success["success"] ? 'alert-primary' : 'alert-error' ?>">
         <?php echo $alertMessage ?>
