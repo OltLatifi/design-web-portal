@@ -52,6 +52,18 @@
               foreach ($publishedArticles as $article) {
                 if ($index++ < $slides) continue;
                 $published_at = date("F jS, Y", strtotime($article['published_at']));
+
+                $addToFavoritesButton = '';
+                session_start();
+                if ($_SESSION["role"] && strtoupper($_SESSION["role"]) == "USER") {
+                  $articleId = $article['id'];
+                  $addToFavoritesButton = "
+                  <form method='post' action='add_to_favorites.php'>
+                    <input type='hidden' name='articleId' value='$articleId'>
+                    <button type='submit'>Add to Favorites</button>
+                  </form>";
+                }
+
                 echo "
                 <a class='single-article'>
                   <img class='index-list-article' src='".$baseURL .$article['image']."' alt='Article Image". $article['id']."'>
