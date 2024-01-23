@@ -27,8 +27,19 @@ CREATE TABLE article (
     status BOOLEAN NOT NULL
 )";
 
+$create_favorites_table = "
+CREATE TABLE favorites (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    article_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY (article_id) REFERENCES article(id) ON DELETE CASCADE
+)";
+
 $db->query($create_user_table);
 $db->query($create_article_table);
+$db->query($create_favorites_table);
 
 $db->close();
 ?>
