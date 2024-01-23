@@ -27,8 +27,16 @@ CREATE TABLE article (
     status BOOLEAN NOT NULL
 )";
 
+$create_about_us_table = "
+CREATE TABLE about_us (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    content TEXT
+);
+";
+
 $db->query($create_user_table);
 $db->query($create_article_table);
+$db->query($create_about_us_table);
 
 $db->close();
 ?>
