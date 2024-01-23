@@ -21,10 +21,10 @@
       <!-- nav -->
       <?php
         include "../../components/navbar.php";
-      ?>
+      ?>  
       <!-- form -->
       <main class="form-layout margin-ys">
-        <form id="form" class="form">
+        <form id="form" class="form" action="new_user.php">
           <h1>Register</h1>
           <p>
             Already have an account?
@@ -34,6 +34,16 @@
             Username:
             <input id="username" type="text" />
             <p class="error" id="username_error"></p>
+          </label>
+          <label>
+            First Name:
+            <input id="first_name" type="text" />
+            <p class="error" id="first_name_error"></p>
+          </label>
+          <label>
+            Last name:
+            <input id="last_name" type="text" />
+            <p class="error" id="last_name_error"></p>
           </label>
           <label>
             Email:
@@ -71,11 +81,15 @@
       /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+,\-./:;<=>?@[\\]^_`{|}~]).{8,}$/;
 
     let username = document.getElementById("username");
+    let firstName= = document.getElementById("first_name");
+    let lastName = document.getElementById("last_name");
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let confirm_password = document.getElementById("confirm_password");
 
     let username_error = document.getElementById("username_error");
+    let firstName_error = document.getElementById("first_name_error");
+    let lastName_error = document.getElementById("last_name_error");
     let email_error = document.getElementById("email_error");
     let password_error = document.getElementById("password_error");
     let confirm_password_error = document.getElementById(
@@ -94,6 +108,20 @@
           "Username should be camelcase (i.e OltLatifi, JohnDoe)";
       } else {
         username_error.classList.remove("show");
+      }
+
+      if (firstName.value.trim() === "") {
+        firstName_error.classList.add("show");
+        firstName_error.innerHTML = "First name is a required field";
+      } else {
+        firstName_error.classList.remove("show");
+      }
+
+      if (lastName.value.trim() === "") {
+        lastName_error.classList.add("show");
+        lastName_error.innerHTML = "Last name is a required field";
+      } else {
+        lastName_error.classList.remove("show");
       }
 
       if (email.value.trim() === "") {
