@@ -93,6 +93,12 @@ foreach ($articles as $articleData) {
     $stmt->close();
 }
 
+$aboutus_sql = "
+    INSERT INTO about_us (content)
+    VALUES ('About us content')
+";
+
+$stmt = $db->query($aboutus_sql)
 $db->close();
 
 ?>
