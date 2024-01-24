@@ -81,6 +81,10 @@
   min-height: 800px;
 }
 
+.min-height-m {
+  min-height: 600px;
+}
+
 .alert {
   padding: 0.5rem;
   border-radius: 4px;
