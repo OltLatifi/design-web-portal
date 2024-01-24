@@ -257,13 +257,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       alert.classList.add("show");
     }
 
-
-
-
     function resetState(event) {
       let id = event.target.id;
       document.querySelector(`#${id}_error`).classList.remove("show");
     }
+
     let inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.addEventListener("change", resetState);
