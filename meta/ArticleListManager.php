@@ -25,6 +25,16 @@ class ArticleListManager {
       $sql = $this->sql . " AND article.id=" . $id;
       return $this->db->query($sql)[0];
     }
+
+    public function getFavouriteArticles($userId){
+      $sql = "
+        SELECT article.*, user.first_name, user.last_name
+        FROM article
+        INNER JOIN favorites ON article.id = favorites.article_id
+        INNER JOIN user ON article.author_id = user.id
+        WHERE favorites.user_id = " . $userId;
+      return $this->db->query($sql);
+    }
 }
 
 ?>
