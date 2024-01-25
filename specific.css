@@ -332,3 +332,29 @@
     max-width: 900px;
   }
 }
+
+.article-container {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+}
+
+.article-btn {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  outline: none;
+  padding: 0.6rem 1rem;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  border: 0;
+}
+
+.article-btn:hover {
+  box-shadow: #121212 0 0 0 2px, transparent 0 0 0 0;
+}

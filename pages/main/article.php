@@ -59,7 +59,6 @@
         $stmt->bind_param(...$params);
     
         if ($stmt->execute()) {
-          print_r($stmt);
           $stmt->close();
           return ["success" => true];
         } else {
@@ -113,20 +112,24 @@
 
       <!-- article section -->
       <main class="margin-ys">
-        <h2 class="article-title"><?php echo $article["title"] ?></h2>
-        <p class="article-author">Author: <?php echo $article["first_name"] ?> <?php echo $article["last_name"] ?> • <?php echo date("F jS, Y", strtotime($article['published_at'])) ?></p>
+        <div class="article-container">
+          <div>
+            <h2 class="article-title"><?php echo $article["title"] ?></h2>
+            <p class="article-author">Author: <?php echo $article["first_name"] ?> <?php echo $article["last_name"] ?> • <?php echo date("F jS, Y", strtotime($article['published_at'])) ?></p>
+          </div>
+          <?php
+          if($fav_object->isAuthed()){
+            if(!$fav_object->checkSaved()){
+              echo "<form method='post'><input type='hidden' name='action' value='add'/><button class='article-btn'>❤️</button></form>";
+            } else {
+              echo "<form method='post'><input type='hidden' name='action' value='remove'/><button class='article-btn'>💔</button></form>";
+            }
+          }
+          ?>
+        </div>
         <img class="article-image" src="<?php echo $baseURL . $article["image"] ?>"/>
         <pre class="article-content margin-ys"><?php echo $article["content"] ?></pre>
       </main>
-      <?php
-      if($fav_object->isAuthed()){
-        if(!$fav_object->checkSaved()){
-          echo "<form method='post'><input type='hidden' name='action' value='add' /><button>Add to favourites</button></form>";
-        } else {
-          echo "<form method='post'><input type='hidden' name='action' value='remove' /><button>Remove from favourites</button></form>";
-        }
-      }
-      ?>
     </div>
 
     <!-- footer -->
