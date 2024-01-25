@@ -99,6 +99,7 @@ $aboutus_sql = "
 ";
 
 $stmt = $db->query($aboutus_sql)
+$stmt->execute();
 $db->close();
 
 ?>
