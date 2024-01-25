@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <td>".($status? "Published": "Draft")."</td>
                                     <td>$created_at</td>
                                     <td>
-                                        <button onclick='window.location.href=`".PROJECT_URL. "pages/staff/editarticle.php?id=". $id ."`'>Edit</button>
                                         <button onclick='trigger($id, null, `DELETE`)'>Delete</button>
                                         <button onclick='trigger($id, $status, `TOGGLE`)'>Toggle Status</button>
                                     </td>
