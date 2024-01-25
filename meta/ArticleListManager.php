@@ -32,7 +32,7 @@ class ArticleListManager {
         FROM article
         INNER JOIN favorites ON article.id = favorites.article_id
         INNER JOIN user ON article.author_id = user.id
-        WHERE favorites.user_id = " . $userId;
+        WHERE article.status = 1 AND favorites.user_id = " . $userId;
       return $this->db->query($sql);
     }
 }
